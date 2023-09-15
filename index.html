@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentación de la API</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        h2 {
+            margin-top: 20px;
+        }
+        .resource {
+            margin-top: 20px;
+        }
+        .endpoint {
+            margin-top: 10px;
+        }
+        .endpoint table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .endpoint table th,
+        .endpoint table td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        .success-response {
+            color: green;
+        }
+        .error-response {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Documentación de la API Flask</h1>
+
+    <h2>Descripción</h2>
+    <p>Esta API Flask permite realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) en una colección de productos almacenados en una base de datos MongoDB.</p>
+
+    <h2>Recursos Disponibles</h2>
+
+    <!-- Recurso 1: Obtener todos los productos -->
+    <div class="resource">
+        <h3>1. Obtener todos los productos</h3>
+        <div class="endpoint">
+            <p><strong>URL:</strong> `/`</p>
+            <p><strong>Método HTTP:</strong> GET</p>
+            <p><strong>Descripción:</strong> Obtiene todos los productos almacenados en la base de datos.</p>
+            <p><strong>Respuesta Exitosa:</strong> Devuelve una lista de productos en formato JSON.</p>
+            <p><strong>Códigos de Respuesta:</strong> 200 (Éxito)</p>
+        </div>
+    </div>
+
+    <!-- Recurso 2: Agregar un nuevo producto -->
+    <div class="resource">
+        <h3>2. Agregar un nuevo producto</h3>
+        <div class="endpoint">
+            <p><strong>URL:</strong> `/products`</p>
+            <p><strong>Método HTTP:</strong> POST</p>
+            <p><strong>Descripción:</strong> Agrega un nuevo producto a la base de datos.</p>
+            <p><strong>Datos de Entrada:</strong> Nombre (`name`), Precio (`price`), Cantidad (`quantity`).</p>
+            <p><strong>Respuesta Exitosa:</strong> Devuelve los detalles del producto agregado en formato JSON.</p>
+            <p><strong>Códigos de Respuesta:</strong> 200 (Éxito), 400 (Solicitud Incorrecta)</p>
+        </div>
+    </div>
+
+    <!-- Recurso 3: Eliminar un producto -->
+    <div class="resource">
+        <h3>3. Eliminar un producto</h3>
+        <div class="endpoint">
+            <p><strong>URL:</strong> `/delete/<string:product_name>`</p>
+            <p><strong>Método HTTP:</strong> GET</p>
+            <p><strong>Descripción:</strong> Elimina un producto de la base de datos por su nombre.</p>
+            <p><strong>Respuesta Exitosa:</strong> Redirige a la página de inicio después de la eliminación.</p>
+            <p><strong>Códigos de Respuesta:</strong> 302 (Redirección)</p>
+        </div>
+    </div>
+
+    <!-- Recurso 4: Editar un producto -->
+    <div class="resource">
+        <h3>4. Editar un producto</h3>
+        <div class="endpoint">
+            <p><strong>URL:</strong> `/edit/<string:product_name>`</p>
+            <p><strong>Método HTTP:</strong> POST</p>
+            <p><strong>Descripción:</strong> Edita un producto en la base de datos por su nombre.</p>
+            <p><strong>Datos de Entrada:</strong> Nombre (`name`), Precio (`price`), Cantidad (`quantity`).</p>
+            <p><strong>Respuesta Exitosa:</strong> Redirige a la página de inicio después de la edición.</p>
+            <p><strong>Códigos de Respuesta:</strong> 302 (Redirección), 400 (Solicitud Incorrecta)</p>
+        </div>
+    </div>
+
+    <h2>Ejemplos de Uso</h2>
+
+    <!-- Ejemplo 1: Obtener todos los productos -->
+    <div class="resource">
+        <h3>Ejemplo 1: Obtener todos los productos</h3>
+        <!-- ... -->
+    </div>
+
+    <!-- Ejemplo 2: Agregar un nuevo producto -->
+    <div class="resource">
+        <h3>Ejemplo 2: Agregar un nuevo producto</h3>
+        <!-- ... -->
+    </div>
+
+    <!-- Errores Comunes -->
+    <h2>Errores Comunes</h2>
+    <p><strong>Código de Respuesta:</strong> 404 (No Encontrado)</p>
+    <p><strong>Descripción:</strong> La página solicitada no existe.</p>
+    <p><strong>Código de Respuesta:</strong> 400 (Solicitud Incorrecta)</p>
+    <p><strong>Descripción:</strong> La solicitud no cumple con los requisitos necesarios.</p>
+
+    <h2>Consideraciones Importantes</h2>
+    <!-- ... -->
+
+    <h2>Ejecución</h2>
+    <!-- ... -->
+</body>
+</html>
